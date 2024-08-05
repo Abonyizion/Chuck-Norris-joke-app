@@ -1,6 +1,6 @@
 # joke_app
 
-A new Flutter project.
+This is a flutter app that generates random joke through Chuck Norris joke API
 
 ## Getting Started
 
