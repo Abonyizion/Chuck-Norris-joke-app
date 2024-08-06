@@ -7,7 +7,7 @@ class JokeProvider extends ChangeNotifier{
   RandomJokes? _jokes;
   RandomJokes? get joke => _jokes;
     Future<void> getJokes(BuildContext context) async {
-      showDialog(
+     /* showDialog(
         context: context,
         builder: (context) {
           return const Center(
@@ -18,7 +18,7 @@ class JokeProvider extends ChangeNotifier{
             ),
           );
         },
-      );
+      );*/
       final response = await http.get(Uri.parse("https://api.chucknorris.io/jokes/random"));
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
@@ -27,6 +27,6 @@ class JokeProvider extends ChangeNotifier{
       } else {
         throw Exception('error loading');
       }
-      if (context.mounted) Navigator.pop(context);
+   //   if (context.mounted) Navigator.pop(context);
   }
 }
